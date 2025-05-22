@@ -24,7 +24,7 @@ const Portfolio = () => {
         {
             image: '/sts.png',
             title: 'Stok Takip Sistemi',
-            description: 'Yöneticilerin stok ekleyip çıkardığı,kullanıcıların bunların takip ettiği bir progrram ',
+            description: 'Yöneticilerin stok ekleyip çıkardığı,kullanıcıların bunların takip ettiği bir program ',
             period: '2025',
             link: 'https://github.com/ahmetilkr/stok_takip'
         },
