@@ -164,16 +164,16 @@ const Contact = () => {
                             <div className="social-media">
                                 <h4>Sosyal Medya</h4>
                                 <div className="social-icons">
-                                    <a href="https://github.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://github.com/ahmetilkr" className="social-icon" target="_blank" rel="noopener noreferrer">
                                         {renderSocialIcon('github')}
                                     </a>
                                     <a href="https://twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer">
                                         {renderSocialIcon('twitter')}
                                     </a>
-                                    <a href="https://linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.linkedin.com/in/ahmet-ilker-kahraman-332982342/" className="social-icon" target="_blank" rel="noopener noreferrer">
                                         {renderSocialIcon('linkedin')}
                                     </a>
-                                    <a href="https://instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.instagram.com/ahmetilkr?igsh=ZHlha3Ywdm1xN3E4" className="social-icon" target="_blank" rel="noopener noreferrer">
                                         {renderSocialIcon('instagram')}
                                     </a>
                                 </div>
