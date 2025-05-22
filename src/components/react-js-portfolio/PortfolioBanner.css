@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.portfolio-banner-section {
+  width: 100vw;
+  min-height: 60vh;
+  background: #232d13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-banner-marquee {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.portfolio-banner-text-container {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+}
+
+.portfolio-banner-text {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 12vw;
+  color: #ece5d8;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  user-select: none;
+  text-align: center;
+  padding: 0 50px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slide-in.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.portfolio-letter {
+  display: inline-block;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-18%);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(12%);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-banner-text {
+    font-size: 18vw;
+  }
+  .portfolio-banner-section {
+    min-height: 40vh;
+  }
+} 

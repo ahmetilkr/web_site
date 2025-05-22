@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.portfolio-text-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  padding: 15px 0;
+  margin: 0;
+  position: relative;
+}
+
+.portfolio-text {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.portfolio-text span {
+  margin: 0 5px;
+  text-transform: lowercase;
+  opacity: 0.8;
+}
+
+.portfolio-text span.dot {
+  opacity: 0.4;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hover efekti */
+.portfolio-text:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .portfolio-text {
+    font-size: 14px;
+  }
+} 
