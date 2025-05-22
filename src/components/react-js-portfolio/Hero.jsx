@@ -64,9 +64,9 @@ const Hero = () => {
                             Güncel Teknolojilerden<br></br>
                             {' '}
                             <span className="typing-container hero-accent">
-                <span id="typing-text" ref={typingTextRef}></span>
-                <span className="cursor"></span>
-              </span>
+                                <span id="typing-text" ref={typingTextRef}></span>
+                                <span className="cursor"></span>
+                            </span>
                         </h1>
                         <p className="hero-description">
                             Bilgisayar mühendisliği öğrencisi olarak her gün yeni şeyler öğrenmeye<br></br> öğrendiklerimi projelerde kullanarak kendimi geliştirmeye çalışıyorum

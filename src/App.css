@@ -257,7 +257,12 @@ body.navigating section:not(.page-active) {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--primary);
+  color: #f6ffb0 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-mobile-button:hover {
+  color: #e6ee8b !important;
 }
 
 @media (min-width: 768px) {
@@ -294,48 +299,98 @@ body.navigating section:not(.page-active) {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 5rem;
-  background-color: var(--background);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 2rem;
+  width: 100%;
 }
 
 .hero-text {
-  width: 50%;
-  margin-bottom: 0;
+  flex: 1;
 }
 
 .hero-heading {
   font-size: 2.5rem;
-  font-weight: 700;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
-  white-space: nowrap;
 }
 
 .hero-description {
-  font-size: 1.125rem;
-  color: var(--muted-foreground);
+  font-size: 1.1rem;
   margin-bottom: 2rem;
-  max-width: 32rem;
-  white-space: nowrap;
+  color: var(--foreground);
 }
 
 .hero-image {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
+  flex: 1;
   position: relative;
+  max-width: 100%;
 }
 
-@media (min-width: 768px) {
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+/* Web görünümü için medya sorguları */
+@media (min-width: 769px) {
+  .hero-image {
+    max-width: 400px;
+    margin-left: auto;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobil görünüm için medya sorguları */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-image {
+    order: 1;
+    width: 100%;
+    margin-bottom: 2rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .hero-heading {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 }
 
@@ -393,16 +448,6 @@ body.navigating section:not(.page-active) {
   color: var(--background);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.hero-img {
-  width: 100%;
-  max-width: 24rem;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 4px solid white;
 }
 
 .blob {

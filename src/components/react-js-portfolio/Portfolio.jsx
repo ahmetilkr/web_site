@@ -1,5 +1,65 @@
 import React, { useState } from 'react';
 
+const styles = {
+    portfolioGrid: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '2rem',
+        padding: '2rem 0',
+    },
+    portfolioItem: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        cursor: 'pointer',
+        transition: 'transform 0.3s ease',
+    },
+    portfolioImageContainer: {
+        position: 'relative',
+        width: '100%',
+        paddingTop: '56.25%', // 16:9 aspect ratio
+        overflow: 'hidden',
+        borderRadius: '8px',
+    },
+    portfolioImage: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+    },
+    modalContent: {
+        width: '90%',
+        maxWidth: '1200px',
+        maxHeight: '90vh',
+        overflow: 'auto',
+        '@media (max-width: 768px)': {
+            width: '95%',
+        },
+    },
+    modalBody: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: '2rem',
+        '@media (max-width: 768px)': {
+            flexDirection: 'column',
+        },
+    },
+    modalImage: {
+        flex: '1',
+        '@media (max-width: 768px)': {
+            width: '100%',
+        },
+    },
+    modalDetails: {
+        flex: '1',
+        '@media (max-width: 768px)': {
+            width: '100%',
+        },
+    },
+};
 
 const Portfolio = () => {
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
@@ -105,19 +165,20 @@ const Portfolio = () => {
                 </div>
 
                 {/* Portfolyo Grid */}
-                <div className="portfolio-grid">
+                <div className="portfolio-grid" style={styles.portfolioGrid}>
                     {portfolioItems.map((item, index) => (
                         <div
                             key={index}
                             className="portfolio-item fade-in-up"
-                            style={{ transitionDelay: `${100 + index * 100}ms` }}
+                            style={{ ...styles.portfolioItem, transitionDelay: `${100 + index * 100}ms` }}
                             onClick={() => openModal(index)}
                         >
-                            <div className="portfolio-image-container">
+                            <div className="portfolio-image-container" style={styles.portfolioImageContainer}>
                                 <img
                                     src={item.image}
                                     alt={item.title}
                                     className="portfolio-image"
+                                    style={styles.portfolioImage}
                                 />
                                 <div className="portfolio-image-overlay">
                                     <ExternalLinkIcon />
@@ -142,18 +203,18 @@ const Portfolio = () => {
                 {/* Modal */}
                 {isModalOpen && (
                     <div className="modal-overlay" onClick={closeModal}>
-                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-content" style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                             <button className="modal-close" onClick={closeModal}>&times;</button>
 
-                            <div className="modal-body">
-                                <div className="modal-image">
+                            <div className="modal-body" style={styles.modalBody}>
+                                <div className="modal-image" style={styles.modalImage}>
                                     <img
                                         src={portfolioItems[currentProjectIndex].image}
                                         alt={portfolioItems[currentProjectIndex].title}
                                     />
                                 </div>
 
-                                <div className="modal-details">
+                                <div className="modal-details" style={styles.modalDetails}>
                                     <h3 className="modal-title">{portfolioItems[currentProjectIndex].title}</h3>
                                     <p className="modal-date">{portfolioItems[currentProjectIndex].period}</p>
 
